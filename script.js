@@ -4,7 +4,7 @@ function print_function(){
     revertStyle();
 }
 function changeStyle() {
-    document.getElementById("submit_print").style.display="none";
+    document.getElementById("submit_print_button_container").style.display="none";
     // Get all elements with the class 'data-input'
     const elements = document.querySelectorAll('.data-input');
     
@@ -17,7 +17,7 @@ function changeStyle() {
   }
 
 function revertStyle() {
-    document.getElementById("submit_print").style.display="block";
+    document.getElementById("submit_print_button_container").style.display="block";
     // Get all elements with the class 'data-input'
     const elements = document.querySelectorAll('.data-input');
     
