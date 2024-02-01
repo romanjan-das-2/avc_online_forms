@@ -16,7 +16,7 @@
         .main-content{
             word-wrap: break-word;
         }
-        .data-input{
+        .main-content input{
             width: 100%; 
             background-color: gainsboro;
             border: none;
@@ -57,33 +57,28 @@
         }
         function changeStyle() {
             document.getElementById("submit_print_button_container").style.display="none";
-            // Get all elements with the class 'data-input'
-            const elements = document.querySelectorAll('.data-input');
-            
-            // Iterate over each element and change the style
+            const elements = document.querySelectorAll('input');
             elements.forEach(function(element) {
-            element.style.backgroundColor = 'white';
-            element.style.border = 'none';
-            element.style.marginBottom = '0.1rem';
+                element.style.backgroundColor = 'white';
+                element.style.border = 'none';
+                element.style.marginBottom = '0.1rem';
             });
         }
 
         function revertStyle() {
             document.getElementById("submit_print_button_container").style.display="block";
-            // Get all elements with the class 'data-input'
-            const elements = document.querySelectorAll('.data-input');
-            
-            // Iterate over each element and change the style
+            const elements = document.querySelectorAll('input');
             elements.forEach(function(element) {
-            element.style.backgroundColor = 'gainsboro';
-            element.style.borderBottom = '0.1rem dotted darkgrey';
-            element.style.marginBottom = '1rem';
+                element.style.backgroundColor = 'gainsboro';
+                element.style.borderBottom = '0.1rem dotted darkgrey';
+                element.style.marginBottom = '1rem';
             });
         }
     </script>
 </head>
 <body>
     <div class="main-content">
+        <!-- Form content with matching IDs and names -->
         <p style="text-align: center;">
             Form “J”<br>
             See Regulation 4A (1)<br>
@@ -100,31 +95,31 @@
         </p>
         Sir<br>
         I the undersigned (Name in capital letter)<br>
-        <input class="data-input" type="text" name="" id="applicant_name" required>
+        <input type="text" name="applicant_name" id="applicant_name" required>
         daughter /son of (Name in capital letter) Shri/Dr. <br>
-        <input class="data-input" type="text" name="" id="applicant_father_name" required>
+        <input type="text" name="applicant_father_name" id="applicant_father_name" required>
         have passed final B.V. Sc. & A.H./ B.V.Sc. course from (name of the college)
-        <input class="data-input" type="text" name="" id="name_of_college" required>
+        <input type="text" name="college_name" id="college_name" required>
         affiliated to 
-        <input class="data-input" type="text" name="" id="name_of_board" required>
+        <input type="text" name="college_affiliation" id="college_affiliation" required>
         in the month and year of 
-        <input class="data-input" type="month" name="" id="month_of_passing_out" required> 
+        <input type="month" name="passing_month_year" id="passing_month_year" required> 
         vide Roll No.
-        <input class="data-input" type="text" name="" id="roll_no" required> 
+        <input type="text" name="roll_number" id="roll_number" required> 
         and university Enrolment No.
-        <input class="data-input" type="text" name="" id="uni_enroll_no" required> 
+        <input type="text" name="enrolment_number" id="enrolment_number" required> 
         I, therefore, request the issue of provisional Registration Certificate for
         undersigned “Internship Training” of Twelve months duration at fee Rs. 100.00
         bearing No.
-        <input class="data-input" type="text" name="" id="bearing_no" required> 
+        <input type="text" name="certificate_bearing_number" id="certificate_bearing_number" required> 
         dated
-        <input class="data-input" type="date" name="" id="date_of_pay" required> 
+        <input type="date" name="payment_date" id="payment_date" required> 
         is enclosed. The
         attested copies of my B.V.Sc. & A.H. course completion certificate issued by
         the University /Institution
-        <input class="data-input" type="text" name="" id="name_of_uni_inst" required> 
+        <input type="text" name="certificate_issuing_authority" id="certificate_issuing_authority" required> 
         (Name of the college).
-        <input class="data-input" type="text" name="" id="name_of_college_2" required>
+        <input type="text" name="certificate_college_name" id="certificate_college_name" required>
         <p>
             indicating completion
             of the course as specified in the Veterinary Council of India (minimum
