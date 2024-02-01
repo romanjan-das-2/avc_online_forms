@@ -17,11 +17,10 @@
             word-wrap: break-word;
         }
         .main-content input{
-            width: 100%; 
+            width: auto;
             background-color: gainsboro;
             border: none;
-            border-bottom: 0.1rem dotted darkgrey;
-            margin-bottom: 1rem;
+            border-bottom: 0.1rem solid rgb(66, 66, 66);
             font-weight: bold;
             text-transform: uppercase;
         }
@@ -40,6 +39,11 @@
             .main-content{
                 width: 90%;
             }
+            .main-content input{
+                text-align: center;
+                width: auto;
+                margin-bottom: auto;
+            }
         }
 
         /* Apply styles only in landscape mode */
@@ -48,11 +52,17 @@
                 width: 700px;
             }
             .main-content input{
+                text-align: center;
+                width: auto;
                 margin-bottom: auto;
             }
         }
     </style>
     <script>
+        function adjustWidth(input) {
+            input.style.width = ( input.value.length + 3 )+ "ch";
+        }
+
         function print_function(){
             changeStyle();
             window.print();
@@ -63,8 +73,8 @@
             const elements = document.querySelectorAll('input');
             elements.forEach(function(element) {
                 element.style.backgroundColor = 'white';
-                element.style.border = 'none';
-                element.style.marginBottom = '0.1rem';
+                //element.style.border = 'none';
+                //element.style.marginBottom = '0.1rem';
             });
         }
 
@@ -73,8 +83,8 @@
             const elements = document.querySelectorAll('input');
             elements.forEach(function(element) {
                 element.style.backgroundColor = 'gainsboro';
-                element.style.borderBottom = '0.1rem dotted darkgrey';
-                element.style.marginBottom = '1rem';
+                element.style.borderBottom = '0.1rem solid darkgrey';
+                //element.style.marginBottom = '1rem';
             });
         }
     </script>
@@ -99,46 +109,34 @@
         Sir<br>
         <form>
             <label for="applicant_name">I the undersigned (Name in capital letter)</label>
-            <input type="text" name="applicant_name" id="applicant_name" required value="John DOE">
-            <br>
+            <input id="myInput" type="text" oninput="adjustWidth(this)" type="text" name="applicant_name" id="applicant_name" required value="John DOE">
             <label for="applicant_father_name">daughter/son of (Name in capital letter) Shri/Dr.</label>
-            <input type="text" name="applicant_father_name" id="applicant_father_name" required value="John DOE Sr.">
-            <br>
+            <input id="myInput" type="text" oninput="adjustWidth(this)" type="text" name="applicant_father_name" id="applicant_father_name" required value="John DOE Sr.">
             <label for="college_name">have passed final B.V. Sc. & A.H./ B.V.Sc. course from (name of the college)</label>
-            <input type="text" name="college_name" id="college_name" required value="ABC College">
-            <br>
+            <input id="myInput" type="text" oninput="adjustWidth(this)" type="text" name="college_name" id="college_name" required value="ABC College">
             <label for="college_affiliation">affiliated to</label>
-            <input type="text" name="college_affiliation" id="college_affiliation" required value="XYZ University">
-            <br>
+            <input id="myInput" type="text" oninput="adjustWidth(this)" type="text" name="college_affiliation" id="college_affiliation" required value="XYZ University">
             <label for="passing_month_year">in the month and year of</label>
-            <input type="month" name="passing_month_year" id="passing_month_year" required value="2023-01">
-            <br>
+            <input id="myInput" type="text" oninput="adjustWidth(this)" type="month" name="passing_month_year" id="passing_month_year" required value="2023-01">
             <label for="roll_number">vide Roll No.</label>
-            <input type="text" name="roll_number" id="roll_number" required value="123456">
-            <br>
+            <input id="myInput" type="text" oninput="adjustWidth(this)" type="text" name="roll_number" id="roll_number" required value="123456">
             <label for="enrolment_number">and university Enrolment No.</label>
-            <input type="text" name="enrolment_number" id="enrolment_number" required value="789012">
-            <br>
-            <label for="certificate_bearing_number">I, therefore, request the issue of provisional Registration Certificate for undersigned “Internship Training” of Twelve months duration at fee Rs. 100.00 bearing No.</label>
-            <input type="text" name="certificate_bearing_number" id="certificate_bearing_number" required value="CERT-123">
-            <br>
+            <input id="myInput" type="text" oninput="adjustWidth(this)" type="text" name="enrolment_number" id="enrolment_number" required value="789012">
+            <br>&emsp;&emsp;&emsp;I, therefore, request the issue of provisional Registration Certificate for undersigned “Internship Training” of Twelve months duration at fee Rs. 100.00 
+            <label for="certificate_bearing_number">bearing No.</label>
+            <input id="myInput" type="text" oninput="adjustWidth(this)" type="text" name="certificate_bearing_number" id="certificate_bearing_number" required value="CERT-123">
             <label for="payment_date">dated</label>
-            <input type="date" name="payment_date" id="payment_date" required value="2024-01-01">
-            <br>
+            <input id="myInput" type="text" oninput="adjustWidth(this)" type="date" name="payment_date" id="payment_date" required value="2024-01-01">
             <label for="certificate_issuing_authority">The attested copies of my B.V.Sc. & A.H. course completion certificate issued by the University /Institution</label>
-            <input type="text" name="certificate_issuing_authority" id="certificate_issuing_authority" required value="XYZ University">
-            <br>
+            <input id="myInput" type="text" oninput="adjustWidth(this)" type="text" name="certificate_issuing_authority" id="certificate_issuing_authority" required value="XYZ University">
             <label for="certificate_college_name">(Name of the college).</label>
-            <input type="text" name="certificate_college_name" id="certificate_college_name" required value="ABC College">
+            <input id="myInput" type="text" oninput="adjustWidth(this)" type="text" name="certificate_college_name" id="certificate_college_name" required value="ABC College">
         </form>
-        
-        <p>
-            indicating completion
+        <br>indicating completion
             of the course as specified in the Veterinary Council of India (minimum
             standards of Veterinary Education) Degree Course ( B.V.Sc. & A.H.)
             Regulations, 1993. Two passport size photograph are also enclosed for
             consideration and further action at your end.
-        </p>
         <p>
             Yours faithfully,<br><br>
             Signature ...............<br><br>
