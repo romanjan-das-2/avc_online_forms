@@ -47,6 +47,9 @@
             .main-content{
                 width: 700px;
             }
+            .main-content input{
+                margin-bottom: auto;
+            }
         }
     </style>
     <script>
@@ -94,32 +97,41 @@
             Subject- Application for Provisional Registration.
         </p>
         Sir<br>
-        I the undersigned (Name in capital letter)<br>
-        <input type="text" name="applicant_name" id="applicant_name" required>
-        daughter /son of (Name in capital letter) Shri/Dr. <br>
-        <input type="text" name="applicant_father_name" id="applicant_father_name" required>
-        have passed final B.V. Sc. & A.H./ B.V.Sc. course from (name of the college)
-        <input type="text" name="college_name" id="college_name" required>
-        affiliated to 
-        <input type="text" name="college_affiliation" id="college_affiliation" required>
-        in the month and year of 
-        <input type="month" name="passing_month_year" id="passing_month_year" required> 
-        vide Roll No.
-        <input type="text" name="roll_number" id="roll_number" required> 
-        and university Enrolment No.
-        <input type="text" name="enrolment_number" id="enrolment_number" required> 
-        I, therefore, request the issue of provisional Registration Certificate for
-        undersigned “Internship Training” of Twelve months duration at fee Rs. 100.00
-        bearing No.
-        <input type="text" name="certificate_bearing_number" id="certificate_bearing_number" required> 
-        dated
-        <input type="date" name="payment_date" id="payment_date" required> 
-        is enclosed. The
-        attested copies of my B.V.Sc. & A.H. course completion certificate issued by
-        the University /Institution
-        <input type="text" name="certificate_issuing_authority" id="certificate_issuing_authority" required> 
-        (Name of the college).
-        <input type="text" name="certificate_college_name" id="certificate_college_name" required>
+        <form>
+            <label for="applicant_name">I the undersigned (Name in capital letter)</label>
+            <input type="text" name="applicant_name" id="applicant_name" required value="John DOE">
+            <br>
+            <label for="applicant_father_name">daughter/son of (Name in capital letter) Shri/Dr.</label>
+            <input type="text" name="applicant_father_name" id="applicant_father_name" required value="John DOE Sr.">
+            <br>
+            <label for="college_name">have passed final B.V. Sc. & A.H./ B.V.Sc. course from (name of the college)</label>
+            <input type="text" name="college_name" id="college_name" required value="ABC College">
+            <br>
+            <label for="college_affiliation">affiliated to</label>
+            <input type="text" name="college_affiliation" id="college_affiliation" required value="XYZ University">
+            <br>
+            <label for="passing_month_year">in the month and year of</label>
+            <input type="month" name="passing_month_year" id="passing_month_year" required value="2023-01">
+            <br>
+            <label for="roll_number">vide Roll No.</label>
+            <input type="text" name="roll_number" id="roll_number" required value="123456">
+            <br>
+            <label for="enrolment_number">and university Enrolment No.</label>
+            <input type="text" name="enrolment_number" id="enrolment_number" required value="789012">
+            <br>
+            <label for="certificate_bearing_number">I, therefore, request the issue of provisional Registration Certificate for undersigned “Internship Training” of Twelve months duration at fee Rs. 100.00 bearing No.</label>
+            <input type="text" name="certificate_bearing_number" id="certificate_bearing_number" required value="CERT-123">
+            <br>
+            <label for="payment_date">dated</label>
+            <input type="date" name="payment_date" id="payment_date" required value="2024-01-01">
+            <br>
+            <label for="certificate_issuing_authority">The attested copies of my B.V.Sc. & A.H. course completion certificate issued by the University /Institution</label>
+            <input type="text" name="certificate_issuing_authority" id="certificate_issuing_authority" required value="XYZ University">
+            <br>
+            <label for="certificate_college_name">(Name of the college).</label>
+            <input type="text" name="certificate_college_name" id="certificate_college_name" required value="ABC College">
+        </form>
+        
         <p>
             indicating completion
             of the course as specified in the Veterinary Council of India (minimum
