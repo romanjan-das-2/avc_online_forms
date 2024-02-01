@@ -4,8 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form of Provisional Registration</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1rem;
+        }
+        .main-content{
+            word-wrap: break-word;
+        }
+        .data-input{
+            width: 100%; 
+            background-color: gainsboro;
+            border: none;
+            border-bottom: 0.1rem dotted darkgrey;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        #submit_print_button_container{
+            margin-bottom: 10rem;
+        }
+        #submit_print{
+            background-color: blue;
+            border-color: blue;
+            color: white;
+            font-weight: bold;
+            padding: 0.2rem;
+        }
+        /* Apply styles only in portrait mode */
+        @media (orientation: portrait) {
+            .main-content{
+                width: 90%;
+            }
+        }
+
+        /* Apply styles only in landscape mode */
+        @media (orientation: landscape) {
+            .main-content{
+                width: 700px;
+            }
+        }
+    </style>
+    <script>
+        function print_function(){
+            changeStyle();
+            window.print();
+            revertStyle();
+        }
+        function changeStyle() {
+            document.getElementById("submit_print_button_container").style.display="none";
+            // Get all elements with the class 'data-input'
+            const elements = document.querySelectorAll('.data-input');
+            
+            // Iterate over each element and change the style
+            elements.forEach(function(element) {
+            element.style.backgroundColor = 'white';
+            element.style.border = 'none';
+            element.style.marginBottom = '0.1rem';
+            });
+        }
+
+        function revertStyle() {
+            document.getElementById("submit_print_button_container").style.display="block";
+            // Get all elements with the class 'data-input'
+            const elements = document.querySelectorAll('.data-input');
+            
+            // Iterate over each element and change the style
+            elements.forEach(function(element) {
+            element.style.backgroundColor = 'gainsboro';
+            element.style.borderBottom = '0.1rem dotted darkgrey';
+            element.style.marginBottom = '1rem';
+            });
+        }
+    </script>
 </head>
 <body>
     <div class="main-content">
